@@ -30,16 +30,21 @@ Currently, there are no configuration items
 
 ## Usage
 
-use buffer-scoped variable to get this line
+This plugin updates somes buffer-scoped(b:) variables.
 
-in vimscript
+- `coc_symbol_line`
+- `coc_symbol_line_items`
 
-```viml
-get(b:, 'coc_symbol_line', '')
-```
+Print them to get details
 
-in lua
+### render
 
-```lua
-vim.b.coc_symbol_line or ''
-```
+set `g:coc_symbol_line_render` to choose what render you want. Default to None
+
+#### echo
+
+`let g:coc_symbol_line_render = 'echo'`
+
+echo in command line with colors
+
+![image](https://user-images.githubusercontent.com/47070852/130636466-14d8904b-ab3f-416b-8519-6a2b6d3c2529.png)
