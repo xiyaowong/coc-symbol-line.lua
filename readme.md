@@ -1,5 +1,7 @@
 # coc-symbol-line
 
+![image](https://user-images.githubusercontent.com/47070852/130612399-a681b381-e17b-477b-9470-6baf0f37cfdf.png)
+
 This plugin requires neovim5.0+
 
 ## Installation
