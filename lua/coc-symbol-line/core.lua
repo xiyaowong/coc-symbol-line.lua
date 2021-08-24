@@ -45,7 +45,10 @@ function M.refresh()
 		symbols = vim.tbl_filter(function(symbol)
 			return (
 					symbol.range
-					and vim.tbl_contains({ "Class", "Method", "Function", "Struct", "Variable" }, symbol.kind)
+					and vim.tbl_contains(
+						{ "Class", "Method", "Function", "Struct", "Property", "Variable" },
+						symbol.kind
+					)
 					-- not ends with ' callback'
 					and symbol.text:reverse():find("kcabllac ") ~= 1
 					and position_in_range(position, symbol.range) == 0
