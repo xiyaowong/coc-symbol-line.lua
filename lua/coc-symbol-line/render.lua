@@ -7,6 +7,7 @@ local function echon(msg)
 end
 
 local function echo(items)
+  vim.cmd "echo ''"
   for idx, item in ipairs(items) do
     if idx ~= 1 then
       echohl 'LineNr'
