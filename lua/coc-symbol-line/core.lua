@@ -59,13 +59,15 @@ function M.refresh()
 
     local new_symbols = {}
     for _, symbol in ipairs(symbols) do
-      -- only need the nearest variable
-      if
-        symbol.kind == 'Variable'
-        and vim.tbl_count(new_symbols) > 0
-        and new_symbols[#new_symbols].kind == 'Variable'
+      local counts = vim.tbl_count(new_symbols)
+      if counts == 0 then
+        table.insert(new_symbols, symbol)
+      elseif
+        -- only need the nearest variable, property
+        vim.tbl_contains({ 'Variable', 'Property' }, symbol.kind)
+        and new_symbols[counts].kind == symbol.kind
       then
-        new_symbols[#new_symbols] = symbol
+        new_symbols[counts] = symbol
       else
         table.insert(new_symbols, symbol)
       end
