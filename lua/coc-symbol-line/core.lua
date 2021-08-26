@@ -64,7 +64,7 @@ function M.refresh()
         table.insert(new_symbols, symbol)
       elseif
         -- only need the nearest variable, property
-        vim.tbl_contains({ 'Variable', 'Property' }, symbol.kind)
+        vim.tbl_contains({ 'Variable' }, symbol.kind)
         and new_symbols[counts].kind == symbol.kind
       then
         new_symbols[counts] = symbol
