@@ -51,8 +51,7 @@ function M.refresh()
             { 'Class', 'Method', 'Function', 'Struct', 'Property', 'Variable' },
             symbol.kind
           )
-          -- not ends with ' callback'
-          and symbol.text:reverse():find 'kcabllac ' ~= 1
+          and not vim.endswith(symbol.text, ' callback')
           and position_in_range(position, symbol.range) == 0
         )
     end, symbols)
